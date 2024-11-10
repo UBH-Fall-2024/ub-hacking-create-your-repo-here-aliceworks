@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>ASSIGNMENT PREDICTOR</h1>
+
+        <!-- Display message if available -->
+        {% if message %}
+        <div class="message-box" id="message-box">
+            {{ message }}
+        </div>
+        {% endif %}
+
+        <!-- File upload form -->
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <!-- Native file input (hidden) -->
+            <input type="file" name="file" id="file" accept=".pdf" required style="display: none;" onchange="displayFileName()">
+
+            <!-- Custom upload button with image and text -->
+            <label for="file" class="upload-label">
+                <img src="{{ url_for('static', filename='A2.png') }}" alt="Upload Button" class="upload-button">
+                <span class="upload-text">Choose file</span>
+            </label>
+
+            <!-- File name display area -->
+            <span id="file-name" class="file-name"></span>
+
+            <br>
+
+            <button type="submit">Upload PDF</button>
+        </form>
+    </div>
+
+    <!-- JavaScript to hide the message box after a few seconds and to display the selected file name -->
+    <script>
+        // Hide the message box after 3 seconds
+        const messageBox = document.getElementById('message-box');
+        if (messageBox) {
+            setTimeout(() => {
+                messageBox.style.display = 'none';
+            }, 3000);
+        }
+
+        // Function to display the selected file name
+        function displayFileName() {
+            const fileInput = document.getElementById('file');
+            const fileNameDisplay = document.getElementById('file-name');
+            const fileName = fileInput.files[0] ? fileInput.files[0].name : 'No file selected';
+            fileNameDisplay.textContent = fileName;
+        }
+    </script>
+
+    <!-- New button for extracting data -->
+<form action="/extract_data" method="POST">
+    <button type="submit">Extract Assignment Data</button>
+</form>
+
+<!-- Display extracted data if available -->
+{% if extracted_data %}
+    <div class="extracted-data">
+        <h2>Extracted Assignment Data</h2>
+        {{ extracted_data | safe }}
+    </div>
+{% endif %}
+
+</body>
+</html>

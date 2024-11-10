@@ -1,0 +1,6 @@
+flask
+pdfminer.six
+pandas
+google.generativeai
+flask-login
+authlib
