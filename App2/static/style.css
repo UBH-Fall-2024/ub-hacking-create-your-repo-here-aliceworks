@@ -1,0 +1,191 @@
+/* Set the full-screen background image */
+body {
+    background-image: url('/static/A1.png'); /* Correct path to image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+}
+
+/* Container for the title */
+.container {
+    text-align: center;
+    margin-top: -90px;
+}
+
+/* Style for the h1 element */
+h1 {
+    font-size: 3rem;
+    color: rgb(133, 19, 19); /* White color for the text */
+    margin-top: 90px;
+}
+
+/* Styling the file upload form */
+form {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+/* Style for the upload button container (image and text) */
+.upload-label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: add a shadow for a 3D effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Style for the upload button image */
+.upload-button {
+    width: 150px; /* Adjust the size as needed */
+    margin-right: 10px; /* Space between image and text */
+}
+
+.upload-text {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hover effect for the image */
+.upload-label:hover {
+    transform: scale(1.05); /* Slightly enlarge the label on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Add more shadow on hover */
+}
+
+/* File name display */
+.file-name {
+    margin-left: 20px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Styling the upload button (submit button) */
+button {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    background: linear-gradient(145deg, #6e7f47, #4CAF50); /* Gradient effect */
+    color: white;
+    border: 2px solid #4CAF50;
+    border-radius: 50px; /* Rounded corners */
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Add a shadow */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+    text-transform: uppercase; /* Uppercase text for emphasis */
+}
+
+/* Hover effect */
+button:hover {
+    background: linear-gradient(145deg, #4CAF50, #6e7f47); /* Reversed gradient */
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3); /* More prominent shadow on hover */
+    transform: translateY(-2px); /* Button lifts up slightly */
+}
+
+/* Message box styling */
+.message-box {
+    margin-top: 20px;
+    padding: 15px;
+    color: #e56491;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;  /* Optional: Adds some space at the top */
+}
+
+button {
+    margin: 10px 0; /* Adds space around the button */
+}
+
+/* Container styles */
+.extracted-data {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Animation wrapper */
+.animated-output {
+    margin-top: 10px;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Styling the output textbox */
+.output-box {
+    width: 500px;
+    height: 50px;
+    padding: 2px;
+    font-size: 2rem;
+    color: #d11717;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: none;
+    text-align: center;
+    opacity: 0; /* Start as invisible */
+    animation: fadeInScale 3s ease-in-out forwards; /* Apply animation */
+}
+
+/* Keyframes for the magic animation */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* Styling the animated image */
+.animated-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Optional: add height to center vertically */
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Animation for the image */
+.image-animation {
+    justify-content: center;
+    height: 50%;
+    width: 50%; /* Adjust the size as needed */
+    opacity: 0; /* Start as invisible */
+    text-align: center;
+    animation: fadeIn 2s ease-in-out forwards; /* Apply animation */
+}
+
+/* Keyframes for the fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
